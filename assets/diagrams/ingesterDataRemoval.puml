@@ -1,0 +1,14 @@
+@startuml
+control EventBridge as event
+entity "Ingester Controller" as controller
+database Source as source
+database Redis as redis
+
+autonumber
+event -> controller : Send event to start ingestion
+controller -> source : Request list of schedules
+controller -> redis : Request list of stored schedules
+controller -> controller : Calculate old stored schedules
+controller -> redis : Request removal of old stored schedules
+
+@enduml

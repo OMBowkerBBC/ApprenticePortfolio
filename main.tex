@@ -1,0 +1,138 @@
+\documentclass{article}
+\setcounter{secnumdepth}{0}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\reversemarginpar
+\captionsetup{justification=centering}
+
+\title{Apprenticeship Portfolio}
+\author{Oliver Matthew Bowker (220263618)}
+\date{\today}
+\begin{document}
+
+  \maketitle
+  \begin{center}
+    \includegraphics[width=5cm]{assets/cover.png}
+  \end{center}
+  \newpage
+
+  \tableofcontents
+  \newpage
+
+  \listoffigures
+  \newpage
+
+  \listoftables
+  \newpage
+
+  \listoftodos
+  \newpage
+
+  \section{Projects}
+  I will now briefly describe the two projects that will be discussed during this document/KSBs. More detail will be added to these projects throughout the
+  multiple KSBs.
+  
+  \subsection{Off Product Inspector (OPI)}
+  The Off Product Inspector (OPI) is a tool used by internal members of the BBC to view what media we offer to both internal and external partners. The tool 
+  has two main functions:
+
+
+  \begin{enumerate}
+    \item To provide a search mechanism on all brand/series/episodes metadata that partners can access.
+    \item To provide a tool that generates per partner specific links to catered or promotional data.
+  \end{enumerate}
+
+  The metadata we provide partners is written in JSON (JavaScript Object Notation) and can be hard to read, as a lot of the people are non-technical we provide
+  a web based GUI for users to navigate and browse the data.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{assets/OPI-search.png}
+    \includegraphics[width=6cm]{assets/OPI-detail.png}
+    \caption{Screenshot of the search and episode/series/brand metadata viewer, (left-to-right)}
+    \label{fig:opiMetadataOverview}
+  \end{figure}
+  
+  The \textit{'Deeplink Generator'} is another part of the OPI that allows users to generate links to promotional/catered content. In the past links have been 
+  malformed causing errors for partners, this tool aims to fix that by not having to manually write the links ourselves.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{assets/OPI-deeplink.png}
+    \caption{Screenshot of the Deeplink Generator tools}
+    \label{fig:opiDeeplinkOVerview}
+  \end{figure}
+
+  \subsection{Schedules}
+  The BBC plan to deprecate a service called \textit{'Nitro'} in order to save money on running the service and licenses attached to the service. As part of this
+  certain data the service provided now has to supplied elsewhere. My team is responsible for supplying external partners with the schedule/EPG information.
+  
+  This data contains what is on linear television at what time, and also includes the aforementioned episode/series/brand metadata. In the real world this data
+  is seen when you click 'guide' or corresponding button on the TV remote.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{assets/epg.jpeg}
+    \caption{Example of how EPG/schedules data can be used}
+    \label{fig:epgExample}
+  \end{figure}
+  \newpage
+
+  \input{sections/Schedules.tex}
+  \input{sections/OPI.tex}
+  \input{sections/B1.tex}
+  \input{sections/B2.tex}
+  \input{sections/B3.tex}
+  \input{sections/B4.tex}
+  \input{sections/B5.tex}
+  \input{sections/B6.tex}
+  \input{sections/B7.tex}
+
+  \input{sections/P1.tex}
+  \input{sections/P2.tex}
+  \input{sections/P3.tex}
+  \input{sections/P4.tex}
+  \input{sections/P5.tex}
+  \input{sections/P6.tex}
+
+  \input{sections/L1.tex}
+  \input{sections/L2.tex}
+  \input{sections/L3.tex}
+  \input{sections/L4.tex}
+  \input{sections/L5.tex}
+  \input{sections/L6.tex}
+  \input{sections/L7.tex}
+  \input{sections/L8.tex}
+  \input{sections/L9.tex}
+  \input{sections/L10.tex}
+  \input{sections/L11.tex}
+
+  \input{sections/T1.tex}
+  \input{sections/T2.tex}
+  \input{sections/T3.tex}
+  \input{sections/T4.tex}
+  \input{sections/T5.tex}
+
+  \input{sections/SE-S01.tex}
+  \input{sections/SE-S02.tex}
+  \input{sections/SE-S03.tex}
+  \input{sections/SE-S04.tex}
+  \input{sections/SE-S05.tex}
+  \input{sections/SE-S06.tex}
+
+  \input{sections/SE-K01.tex}
+  \input{sections/SE-K02.tex}
+  \input{sections/SE-K03.tex}
+  \input{sections/SE-K04.tex}
+  \input{sections/SE-K05.tex}
+  \input{sections/SE-K06.tex}
+
+  \input{sections/Appendix.tex}
+
+\end{document}

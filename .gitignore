@@ -1,0 +1,9 @@
+# Latex 
+*.aux
+*.log
+*.lot
+*.lof
+*.out
+*.tdo
+*.toc
+*.upa

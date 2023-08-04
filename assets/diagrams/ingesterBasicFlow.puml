@@ -1,0 +1,27 @@
+@startuml
+control EventBridge as event
+entity "Ingester Controller" as controller
+entity "Ingester Worker" as worker
+database Source as source
+database Redis as redis
+
+autonumber
+event -> controller : Send event to start ingestion
+controller -> source : Request list of schedules
+controller <-- source : Return available schedules
+group #LightCyan For each available schedules
+  controller -> worker : Request ingestion/parsing of schedule
+  worker -> source : Request schedule
+  worker <-- source : Return schedule
+  worker -> worker : Parse schedule
+  alt #LightGreen Parse successful
+    worker -> redis : Store parsed data
+  else #Pink Parse failed
+    autonumber 8
+    controller <-- worker : Send error message
+    controller -> controller : Fires failure metric
+  end
+end
+
+
+@enduml
