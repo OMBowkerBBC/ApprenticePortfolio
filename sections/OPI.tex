@@ -19,20 +19,47 @@
   \todo[noline, size=\small]{B5}
   and information on ahead of doing the work. This can often times mean creating a small MVP to show that it is possible. I talk about this and other
   software lifecycle issues in the \textbf{Software Engineering-1.pdf} document. The spike we created was an MVP that allowed the switching between 
-  catalogue, however the code was not refined, there was no tests written and zero documentation, this would all come later. We then showed what we 
+  catalogues, however the code was not refined, there was no tests written and zero documentation, this would all come later. We then showed what we 
   had come up with to the team and then began the process of breaking the work down into slices/tickets.
 
   \vspace{0.2cm}
 
   I had never done or heard of a \textit{spike} before doing this for the OPI. It's easy to get carried away and go beyond the scope of the spike.
   Towards the end of this spike I began writing some tests for certain things but learned that this was not part of what a spike was. When doing 
-  another spike for the schedules ingester, I took this lesson and stayed within the scope. This was also the first time I had been given a task that
-  was UI based. \todo[noline, size=\small]{L2, L3, L7}
+  another spike for the schedules ingester, I took this lesson and stayed within the scope. \todo[noline, size=\small]{L2, L3, L7, L8}
+
+  \subsection{Working across teams}
+  As this was a web app, it required a UI (user interface). We also needed to speak to the stakeholders/users to understand what they use the tool 
+  for. We had meetings in which we as a team were joined by people from the UI/UX team, as well as the user, Editorial and Partner Marketing. In 
+  these meetings we discussed what data we had and what the users wanted to see, all whilst UX took notes for a later design. We didn't
+  technically need a UX design, however this was a tool to be used by non-developers and therefore required more finesse than devs would have at
+  displaying the information in a readable, understandable way. We set up a separate Slack channel for UX discussions so that changes and 
+  alterations could be made as the project progressed.
+
+  \todo[noline, size=\small]{B3, L6}
+
+  I think the creation of a separate Slack channel for communication throughout the project was great and let us make subtle changes to the UI
+  as new things came to light. These meetings were also extremely helpful and brought to light some other ideas like the 
+  \textbf{Deeplink Generator}, which was then created to help another team further down the line. SpaceChimp is somewhat at the end of the line 
+  as we are the final thing before partners receive their data, this can lead to us not working with other teams too much. I think this project 
+  highlights that we can still work with other teams to enable them in their jobs more. 
+  
+  We then worked with UX again for the Deeplink Generator, where we added images to the initial UI/UX to add more colour to the page.
+
+
   This is an area I have much more knowledge in from my own teachings and allowed me to help/teach my colleague I was spiking with learn
-  about how things like React hooks work and the interplay between React and Next.js.
+  about how things like React hooks work and the interplay between React and Next.js. Throughout my apprenticeship I have paired with colleagues 
+  that have more experience than me. Pairing is when two developers work together on a task, one writes the code whilst the other observes. This is great 
+  \todo[noline, size=\small]{L8}
+  for learning as the one with less experience can get feedback instantly on what they're doing and ask for help. It's important to let the learner 
+  do most of the coding as this helps them get to grips with what's going and think more. If it was the other way they may not understand what is 
+  happening, or it the code may be written to quickly for them to understand what is being done. This is also a good time to gey to know other 
+  members of the team. Especially in a remote setting, it can be easy to program alone with minimal interaction, pairing helps to promote 
+  relationships and conversations within the team.
+
   Further along in the project I also suggested that we move to a newer way of writing css and components called \textit{styled components}. Some benefits of
   these are:
-  \todo[noline, size=\small]{T2}
+  \todo[noline, size=\small]{T2, L3}
   \begin{itemize}
     \item Styles are not separate from the component itself, making it easier to debug.
     \item Styled components can take props to easily customise aspects of a components style.
