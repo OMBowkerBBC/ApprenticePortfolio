@@ -3,7 +3,6 @@
   We have two pipelines, the \textbf{\textit{catalogue}} pipeline that is responsible for all the data that is currently accessible to partners on iPlayer
   and the new \textbf{\textit{schedules}} pipeline. We first have to ingest the schedule data from another source, which consists of over 1000 files and 
   then parse that data for what we want to share with partners. This parsed data is then stored in redis for future use. In the older catalogue pipeline 
-  \todo[noline, size=\small]{B1}
   this process was done by an EC2 (server), however with this pipeline we wanted less to manage and decided to go with a lambda (serverless) approach. To speed 
   up ingestion of data we decided to experiment with multiple lambdas being invoked at the same time for concurrent processing of the files. 
   This is the part of the project I was tasked to document/create.
