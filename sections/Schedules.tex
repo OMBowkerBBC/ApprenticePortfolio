@@ -68,4 +68,79 @@
     \label{fig:credentialsRefactor}
   \end{figure}
 
+  \subsection{The reason for schedules}
+  Schedules is part of a much larger BBC wide objective to deprecate an external service called Nitro. The deadline for this is October with 
+  schedules at the being retrieved from the service that wants to be deprecated. This switch to an internal system will give the BBC more 
+  control/oversight of the data, directly contribute to one of our OKRs, (Simplifying Platform), these can be seen in \textbf{ContextSetting.pptx}, 
+  and will also save us money in the long run.
+
+  \todo[noline, size=\small]{B6}
+
+  Previously partners were getting there data from this data source, but can now get the same, or even more rich data, from us directly. This can 
+  help us with other OKR, like \textit{'Improve our data capabilities'} as it is much easier to track and analyse data that is requested from our 
+  own service.
+
+  \subsection{Burn-up charts and planning}
+  \todo[noline, size=\small]{B2, P1}
+  As schedules was a time sensitive project, it was important that we stayed on track with our work. To help with this our delivery manager 
+  used some tools/techniques to visualise and clarify where we were at in development, but also what was to come next. Below is our roadmap
+  for the schedules work.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{assets/schedulesRoadmap.png}
+    \caption{Roadmap for schedules.}
+    \label{fig:schedulesRoadmap}
+  \end{figure}
+
+  We have 4 stages \textit{'Alpha'}, \textit{'Data Complete Release'}, \textit{'Partner Go Live Available'} and \textit{'Finished'}.
+  As of writing this we have completed the third stage, meaning that partners are now integrating and using the service. During the 
+  creation of this there were many discussion of what needed to be done before each stage was complete.
+
+  An example of this was the creation of automated tests, which would help validate our pipeline was parsing and sending the data to partners correctly.
+  This was pushed back to just before partners could go live, but partners would already have access to the information for testing 
+  on their systems. This was done as integration can take a long time, with a deadline of October it was vital that partners could start
+  working with the data as fast as possible, however we felt that before we could go live we needed the assurance the automated 
+  tests would provide us.
+
+  Another discussion was around \textit{'deltas'}, which provide real time updates to the data, instead of a periodic update (every
+  15 minutes). After some investigation and discussions it was decided that this was not needed to go live and could be added after, this due again 
+  to time constraints but also the relevance of the changes would not be that impactful that the partner needed immediate updates.
+
+  \vspace{0.2cm}
+
+  In addition to roadmapping our delivery manager also used burn-up charts throughout the development of the project. Atlassian describes a
+  burn-up chart as:
+
+  \begin{quote}
+    \textit{'The Burnup Chart provides a visual representation of a sprint's completed work compared with its total scope. It offers insights 
+    on your project's progress, as well as offers warnings to help you maintain your project's health; you can instantly identify problems such 
+    as scope creep or a deviation from the planned project path.'} [TODO1]
+  \end{quote}
+
+  The burn-up charts can be seen in the following images.
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{assets/burnup/2023-03-03.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-03-14.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-05-03.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-05-10.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-05-15.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-05-23.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-06-03.png}
+    \includegraphics[width=6cm]{assets/burnup/2023-06-13.png}
+    \caption{Exported graph of burn-ups overtime.}
+    \label{fig:scheduleBurnup}
+  \end{figure}
+
+  The red line represents total amount of work todo, the dotted blue line is the expected projection of work completed overtime and the green line 
+  is the amount of worked actually completed. As we discovered more work the we gradually got behind at first, however then began to get back 
+  on track. Then scope creep, asks and deliverables [that] exceed the pre-set project scope [TODO2], kicked in as we added deltas to the MVP. As discussed 
+  above this was then changed to come after and we were then able to finish on time.
+
+  I found this helpful during the process as you could gauge where we were up to in the project. As well as the dropping of deltas on the MVP, automated 
+  tests were picked up by devs, not just QA, which also helped us speed up development towards the end. I think these are great for time sensitive
+  projects, however may add unneeded scrutiny and pressure on non time-sensitive projects.
+
   \newpage
