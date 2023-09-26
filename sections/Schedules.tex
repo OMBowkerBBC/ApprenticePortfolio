@@ -81,7 +81,7 @@
   own service.
 
   \subsection{Burn-up charts and planning}
-  \todo[noline, size=\small]{B2, P1}
+  \todo[noline, size=\small]{B2, P1, T5}
   As schedules was a time sensitive project, it was important that we stayed on track with our work. To help with this our delivery manager 
   used some tools/techniques to visualise and clarify where we were at in development, but also what was to come next. Below is our roadmap
   for the schedules work.
@@ -142,5 +142,44 @@
   I found this helpful during the process as you could gauge where we were up to in the project. As well as the dropping of deltas on the MVP, automated 
   tests were picked up by devs, not just QA, which also helped us speed up development towards the end. I think these are great for time sensitive
   projects, however may add unneeded scrutiny and pressure on non time-sensitive projects.
+
+  \subsection{Monitoring and issues}
+  \todo[noline, size=\small]{L5}
+
+  \subsection{Schedules deltas}
+  \todo[noline, size=\small]{T1}
+  As part of schedules \textit{'deltas'} were introduced, these deltas are notifications of changes to the underlying data. The end architecture looks
+  like the below.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{assets/scheduleDeltas.drawio.png}
+    \caption{New delta architecture.}
+    \label{fig:scheduleDeltas}
+  \end{figure}
+
+  The old method of having a control lambda run and fire off lambdas for each file is still present in the system, however this is now for maintenance
+  only. The above allows us to get data to clients in real time, instead of being on a fixed timer for updating the data. We had a dev meeting where we 
+  planned what to do and how to release it. We wanted to split the work up in a way that we would be able to release some of the work to live without
+  affecting the current timer mechanism. This was tricky because as soon as the SQS was hooked up to trigger the lambda changes would be made to the data 
+  potentially colliding with the coldstart.
+
+  To fix this I suggested that we add a feature flag to \textit{'enable or disable functionality'} [TODO3], in the config that enables and disables writing 
+  to redis. This would disable writing to redis on the LIVE environment and keep the event timer running to continue refreshing the later every 15 minutes.
+  This would also allow us to write integration tests that run against the TEST and LIVE to make sure our deltas are working correctly and matching a full 
+  restart.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{assets/scheduleDeltasTasks.png}
+    \caption{Tasks to implement deltas into the ingester.}
+    \label{fig:scheduleDeltasTasks}
+  \end{figure}
+
+  The above image highlights the tasks created to achieve implementing deltas. Using the above suggestion tasks 1, 2, 3 and 4 could all go to live,
+  with tasks 5 and 6 being put on TEST to start deltas. Then the integration test can be ran to check the validity and gain confidence in the new 
+  system. This keeps with the team aim for continuous deployment (CD) which allows \textit{'faster product development work [and] real-time feedback
+  on new features, updates, and code changes'} [TODO4]. This allows us to quickly find issues with the system instead of deploying a large amount of 
+  code all at once and it potentially failing in multiple places.
 
   \newpage
